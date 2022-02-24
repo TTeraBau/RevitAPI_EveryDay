@@ -24,8 +24,10 @@ namespace LearnAPI.Day05
                 transg.Start("Transaction Group");
                 //Exception(Out Side Transaction)
                 //SetParameter(element,"Transaction Group");
+                //Start a Transaction when you want to change smth. in a Revit Project
                 using (Transaction tran = new Transaction(doc))
                 {
+                    //Starting the Transaction and giving it a name
                     tran.Start("Transaction");
                     SetParameter(element, "Transaction");
                     using (SubTransaction subtrans = new SubTransaction(doc))
